@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 // eslint-disable-next-line @next/next/no-img-element
 import logoSrc from "@/assets/images/Logo.png";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Programs", href: "#courses" },
   { label: "Admissions", href: "#admissions" },
   { label: "Contact", href: "#contact" },
@@ -15,6 +17,7 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -40,31 +43,39 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between h-20">
             {/* LEFT: Logo */}
-            <a href="#" aria-label="Home" className="shrink-0">
+            <Link href="/" aria-label="Home" className="shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={logoSrc.src ?? logoSrc}
                 alt="College Logo"
                 className="h-12 w-auto md:h-16 object-contain rounded-full"
               />
-            </a>
+            </Link>
 
             {/* CENTER: Desktop Nav */}
             <nav
               className="hidden md:flex items-center gap-8"
               aria-label="Main navigation"
             >
-              {NAV_LINKS.map(({ label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="relative text-sm md:text-base font-medium text-[#041d3d]
-                             hover:text-[#d5ad51] transition-colors duration-200 py-1 group"
-                >
-                  {label}
-                  <span className="absolute bottom-0 left-0 h-px w-0 bg-[#d5ad51] group-hover:w-full transition-all duration-300" />
-                </a>
-              ))}
+              {NAV_LINKS.map(({ label, href }) => {
+                const isActive = pathname === href;
+                return (
+                  <Link
+                    key={label}
+                    href={href}
+                    className={`relative text-sm md:text-base font-medium transition-colors duration-200 py-1 group ${
+                      isActive ? "text-[#d5ad51]" : "text-[#041d3d] hover:text-[#d5ad51]"
+                    }`}
+                  >
+                    {label}
+                    <span
+                      className={`absolute bottom-0 left-0 h-px bg-[#d5ad51] transition-all duration-300 ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* RIGHT: Apply Now + Hamburger */}
@@ -115,16 +126,21 @@ export default function Navbar() {
           className="flex flex-col items-center space-y-6"
           aria-label="Mobile navigation"
         >
-          {NAV_LINKS.map(({ label, href }) => (
-            <a
-              key={label}
-              href={href}
-              onClick={() => setMenuOpen(false)}
-              className="text-lg font-medium text-[#041d3d] hover:text-[#d5ad51] transition-colors duration-200"
-            >
-              {label}
-            </a>
-          ))}
+          {NAV_LINKS.map(({ label, href }) => {
+              const isActive = pathname === href;
+              return (
+                <Link
+                  key={label}
+                  href={href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`text-lg font-medium transition-colors duration-200 ${
+                    isActive ? "text-[#d5ad51]" : "text-[#041d3d] hover:text-[#d5ad51]"
+                  }`}
+                >
+                  {label}
+                </Link>
+              );
+            })}
           <a
             href="#apply"
             onClick={() => setMenuOpen(false)}
