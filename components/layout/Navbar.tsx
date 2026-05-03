@@ -9,9 +9,9 @@ import logoSrc from "@/assets/images/Logo.png";
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Programs", href: "#courses" },
-  { label: "Admissions", href: "#admissions" },
-  { label: "Contact", href: "#contact" },
+  { label: "Courses", href: "/courses" },
+  { label: "Admissions", href: "/admissions" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {

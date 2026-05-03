@@ -54,7 +54,7 @@ export default function AboutHero() {
           </h1>
 
           <p
-            className="text-[15px] md:text-[17px] italic text-white/45 tracking-wide"
+            className="text-[15px] md:text-[17px] italic text-white/60 tracking-wide"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             Denali College of Management &amp; Technology
