@@ -13,9 +13,19 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Acaryo College",
   description: "Official website of Acaryo College",
+  icons: {
+    icon: [
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.png", sizes: "16x16", type: "image/png" },
+    ],
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={poppins.variable}>
       <body className="font-poppins">

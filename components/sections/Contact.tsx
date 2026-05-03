@@ -93,17 +93,17 @@ export default function Contact() {
   return (
     <section id="contact" className="bg-white py-16 md:py-24">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Left — Highlight Card */}
-          <div className="rounded-xl bg-[#d5ad51] p-6 md:p-8 text-[#041d3d]">
-            <div className="space-y-4">
+          <div className="rounded-xl bg-[#041d3d] p-5 md:p-6 text-[#fff] h-fit shadow-sm">
+            <div className="space-y-3">
               <p className="uppercase text-sm font-medium tracking-wide">
                 Quick Enquiry
               </p>
               <h2 className="text-2xl md:text-3xl font-bold leading-tight">
                 Get in Touch With Us
               </h2>
-              <p className="text-base leading-relaxed max-w-xl">
+              <p className="text-sm md:text-base leading-relaxed max-w-md">
                 Fill in your details and we'll reach out within 24 hours.
               </p>
               <ul className="space-y-3 text-sm leading-6">
@@ -112,7 +112,7 @@ export default function Contact() {
                   "Personalised course guidance",
                   "No spam — only relevant updates",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
+                  <li key={item} className="flex items-start gap-2">
                     <span className="mt-1 text-base font-semibold">✓</span>
                     <span>{item}</span>
                   </li>
@@ -122,7 +122,7 @@ export default function Contact() {
           </div>
 
           {/* Right — Form Card */}
-          <div className="rounded-xl border border-gray-200 bg-white p-6 md:p-8 shadow-soft">
+          <div className="rounded-xl border border-gray-200 bg-white p-6 md:p-8 shadow-soft md:mt-2">
             {submitted ? (
               <div className="flex flex-col items-center justify-center py-10 text-center space-y-3">
                 <div className="text-4xl">🎉</div>
