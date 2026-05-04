@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const PHONE = "919321433587";
+const PHONE = "7759073882";
 const MESSAGE = "Hello, I would like to know more about your college.";
 const WHATSAPP_URL = `https://wa.me/${PHONE}?text=${encodeURIComponent(MESSAGE)}`;
 
