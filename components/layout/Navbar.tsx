@@ -64,7 +64,9 @@ export default function Navbar() {
                     key={label}
                     href={href}
                     className={`relative text-sm md:text-base font-medium transition-colors duration-200 py-1 group ${
-                      isActive ? "text-[#d5ad51]" : "text-[#041d3d] hover:text-[#d5ad51]"
+                      isActive
+                        ? "text-[#d5ad51]"
+                        : "text-[#041d3d] hover:text-[#d5ad51]"
                     }`}
                   >
                     {label}
@@ -83,7 +85,7 @@ export default function Navbar() {
               <a
                 href="#apply"
                 className="text-sm font-medium text-white bg-[#041d3d] px-4 py-2
-                           rounded-md hover:opacity-90 transition-opacity duration-200"
+                           hover:opacity-90 transition-opacity duration-200"
               >
                 Apply Now
               </a>
@@ -127,25 +129,27 @@ export default function Navbar() {
           aria-label="Mobile navigation"
         >
           {NAV_LINKS.map(({ label, href }) => {
-              const isActive = pathname === href;
-              return (
-                <Link
-                  key={label}
-                  href={href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`text-lg font-medium transition-colors duration-200 ${
-                    isActive ? "text-[#d5ad51]" : "text-[#041d3d] hover:text-[#d5ad51]"
-                  }`}
-                >
-                  {label}
-                </Link>
-              );
-            })}
+            const isActive = pathname === href;
+            return (
+              <Link
+                key={label}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className={`text-lg font-medium transition-colors duration-200 ${
+                  isActive
+                    ? "text-[#d5ad51]"
+                    : "text-[#041d3d] hover:text-[#d5ad51]"
+                }`}
+              >
+                {label}
+              </Link>
+            );
+          })}
           <a
             href="#apply"
             onClick={() => setMenuOpen(false)}
             className="mt-4 text-sm font-medium text-white bg-[#041d3d] px-6 py-2.5
-                       rounded-md hover:opacity-90 transition-opacity duration-200"
+                       hover:opacity-90 transition-opacity duration-200"
           >
             Apply Now
           </a>
