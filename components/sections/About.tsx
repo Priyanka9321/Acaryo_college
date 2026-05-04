@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Container from "@/components/ui/Container";
 
 const features = [
@@ -12,7 +16,7 @@ const features = [
     desc: "Airlines & airport recruiters",
   },
   {
-    icon: "👨‍🏫",
+    icon: "👨🏫",
     title: "Expert Faculty",
     desc: "Industry mentors and trainers",
   },
@@ -23,14 +27,34 @@ const features = [
   },
 ];
 
-export default function About() {
-  return (
-    <section id="about" className="bg-white py-16 md:py-24">
-      <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut", delay: i * 0.1 },
+  }),
+};
 
+export default function About() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  return (
+    <section id="about" className="relative z-10 bg-white py-16 md:py-24">
+      <Container>
+        <div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        >
           {/* Left: Text Content */}
-          <div className="flex flex-col gap-6">
+          <motion.div
+            className="flex flex-col gap-6"
+            custom={0}
+            variants={fadeUp}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+          >
             <div>
               <span className="text-sm text-secondary uppercase tracking-wide font-medium">
                 About Us
@@ -60,22 +84,25 @@ export default function About() {
                 Learn More About Us
               </a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: Feature Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {features.map(({ icon, title, desc }) => (
-              <div
+            {features.map(({ icon, title, desc }, i) => (
+              <motion.div
                 key={title}
+                custom={i + 1}
+                variants={fadeUp}
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
                 className="p-5 rounded-lg border border-gray-100 shadow-soft hover:shadow-md transition-shadow duration-200"
               >
                 <span className="text-2xl">{icon}</span>
                 <h3 className="mt-3 font-semibold text-primary">{title}</h3>
                 <p className="mt-1 text-sm text-gray-600">{desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-
         </div>
       </Container>
     </section>
