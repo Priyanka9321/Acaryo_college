@@ -1,5 +1,6 @@
 import AboutHero from "@/components/sections/AboutHero";
 import OurMission from "@/components/sections/OurMission";
+import CoreValues from "@/components/sections/CoreValues";
 
 export const metadata = {
   title: "About Us | Denali College",
@@ -12,6 +13,7 @@ export default function AboutPage() {
     <main>
       <AboutHero />
       <OurMission />
+      <CoreValues />
     </main>
   );
 }
