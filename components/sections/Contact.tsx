@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Container from "@/components/ui/Container";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const COURSES = [
   "Diploma in Aviation Management",
@@ -91,10 +92,11 @@ export default function Contact() {
   const labelClass = "block text-sm font-medium text-gray-700 mb-1";
 
   return (
-    <section id="contact" className="bg-white py-16 md:py-24">
+    <section id="contact" className="relative z-10 bg-white py-16 md:py-24">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Left — Highlight Card */}
+          <ScrollReveal delay={0}>
           <div className="rounded-xl bg-[#041d3d] p-5 md:p-6 text-[#fff] h-fit shadow-sm">
             <div className="space-y-3">
               <p className="uppercase text-sm font-medium tracking-wide">
@@ -120,8 +122,10 @@ export default function Contact() {
               </ul>
             </div>
           </div>
+          </ScrollReveal>
 
           {/* Right — Form Card */}
+          <ScrollReveal delay={0.15}>
           <div className="rounded-xl border border-gray-200 bg-white p-6 md:p-8 shadow-soft md:mt-2">
             {submitted ? (
               <div className="flex flex-col items-center justify-center py-10 text-center space-y-3">
@@ -318,6 +322,7 @@ export default function Contact() {
               </form>
             )}
           </div>
+          </ScrollReveal>
         </div>
       </Container>
     </section>
