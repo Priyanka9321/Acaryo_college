@@ -80,7 +80,7 @@ export default function Navbar() {
             {/* RIGHT: Apply Now + Hamburger */}
             <div className="flex items-center gap-3">
               <Link
-                href="#apply"
+                href="/admissions"
                 className="text-sm font-medium text-white bg-[#041d3d] px-4 py-2
                           hover:bg-[#d5ad51] hover:text-black hover:opacity-90 transition-opacity duration-200"
               >
@@ -141,7 +141,7 @@ export default function Navbar() {
             );
           })}
           <Link
-            href="#apply"
+            href="/admissions"
             onClick={() => setMenuOpen(false)}
             className="mt-4 text-sm font-medium text-white bg-[#041d3d] px-6 py-2.5
              hover:bg-[#d5ad51] hover:text-black transition-all duration-300"
