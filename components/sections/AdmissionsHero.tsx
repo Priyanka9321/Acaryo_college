@@ -10,7 +10,7 @@ export default function AdmissionsHero() {
           </h1>
         </div>
 
-        <div className="overflow-hidden rounded bg-white shadow-[0_18px_60px_rgba(15,23,42,0.12)]">
+        <div className="overflow-hidden bg-white shadow-[0_18px_60px_rgba(15,23,42,0.12)]">
           <div className="relative aspect-[16/9] w-full sm:aspect-[16/8] lg:aspect-[16/7]">
             <Image
               src="/assets/images/admission.jpg"
