@@ -9,6 +9,19 @@ export default function Courses() {
       <Container>
         {/* Header */}
         <ScrollReveal delay={0}>
+          <nav
+            className="mb-4 flex items-center justify-center gap-2 text-[10px] uppercase tracking-[0.14em] text-white/60"
+            aria-label="Breadcrumb"
+          >
+            <Link href="/" className="transition-colors hover:text-secondary">
+              Home
+            </Link>
+            <span aria-hidden="true" className="text-white/30">
+              /
+            </span>
+            <span className="text-secondary">Courses</span>
+          </nav>
+
           <div className="mb-12 text-center">
             <p className="mb-2 text-sm uppercase tracking-wide text-secondary font-medium">
               Programs

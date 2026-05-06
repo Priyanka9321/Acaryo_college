@@ -1,9 +1,23 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AdmissionsHero() {
   return (
     <section className="relative overflow-hidden bg-white py-10 sm:py-12 lg:py-14">
       <div className="mx-auto w-full max-w-[1400px] px-5 sm:px-6 lg:px-8">
+        <nav
+          className="mb-4 flex items-center gap-2 text-[10px] uppercase tracking-[0.14em] text-slate-500 sm:mb-6"
+          aria-label="Breadcrumb"
+        >
+          <Link href="/" className="transition-colors hover:text-[#8c1515]">
+            Home
+          </Link>
+          <span aria-hidden="true" className="text-slate-300">
+            /
+          </span>
+          <span className="text-[#8c1515]">Admissions</span>
+        </nav>
+
         <div className="mb-6 text-center sm:mb-8 lg:mb-10">
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Admissions
