@@ -69,11 +69,11 @@ export default function Footer() {
               Explore
             </h3>
             <div className="space-y-3">
-              <ActionButton label="Home" />
-              <ActionButton label="About Us" />
-              <ActionButton label="Our Courses" />
-              <ActionButton label="Admissions" />
-              <ActionButton label="Contact" />
+              <ActionButton label="Home" href="/" />
+              <ActionButton label="About Us" href="/about" />
+              <ActionButton label="Our Courses" href="/courses" />
+              <ActionButton label="Admissions" href="/admissions" />
+              <ActionButton label="Contact" href="/contact" />
             </div>
           </div>
         </div>
@@ -138,10 +138,10 @@ function FooterContactColumn() {
   );
 }
 
-function ActionButton({ label }: { label: string }) {
+function ActionButton({ label, href }: { label: string; href: string }) {
   return (
     <Link
-      href="#"
+      href={href}
       className="flex h-11 items-center justify-center border border-[#8b7766] bg-white px-5 text-[15px] font-medium text-[#5a4a42] shadow-[0_1px_0_rgba(0,0,0,0.04)] transition-colors hover:bg-[#f7f2ec]"
     >
       {label}
