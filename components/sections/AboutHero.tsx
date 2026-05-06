@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function AboutHero() {
   return (
     <section
@@ -25,12 +27,12 @@ export default function AboutHero() {
 
       {/* Breadcrumb */}
       <nav className="relative z-10 flex items-center gap-2 px-5 pt-5 md:px-12 md:pt-7 text-[10px] tracking-[0.14em] uppercase">
-        <a
+        <Link
           href="/"
           className="text-white/30 hover:text-[#d5ad51] transition-colors"
         >
           Home
-        </a>
+        </Link>
         <span className="text-white/15">›</span>
         <span className="text-[#d5ad51]">About Us</span>
       </nav>

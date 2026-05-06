@@ -36,9 +36,8 @@ export default function Navbar() {
     <>
       {/* Fixed Navbar */}
       <header
-        className={`fixed top-0 inset-x-0 z-50 bg-white transition-shadow duration-300 ${
-          scrolled ? "shadow-sm" : ""
-        }`}
+        className={`fixed top-0 inset-x-0 z-50 bg-white transition-shadow duration-300 ${scrolled ? "shadow-sm" : ""
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between h-20">
@@ -63,17 +62,15 @@ export default function Navbar() {
                   <Link
                     key={label}
                     href={href}
-                    className={`relative text-sm md:text-base font-medium transition-colors duration-200 py-1 group ${
-                      isActive
+                    className={`relative text-sm md:text-base font-medium transition-colors duration-200 py-1 group ${isActive
                         ? "text-[#d5ad51]"
                         : "text-[#041d3d] hover:text-[#d5ad51]"
-                    }`}
+                      }`}
                   >
                     {label}
                     <span
-                      className={`absolute bottom-0 left-0 h-px bg-[#d5ad51] transition-all duration-300 ${
-                        isActive ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
+                      className={`absolute bottom-0 left-0 h-px bg-[#d5ad51] transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"
+                        }`}
                     />
                   </Link>
                 );
@@ -82,13 +79,13 @@ export default function Navbar() {
 
             {/* RIGHT: Apply Now + Hamburger */}
             <div className="flex items-center gap-3">
-              <a
+              <Link
                 href="#apply"
                 className="text-sm font-medium text-white bg-[#041d3d] px-4 py-2
-                           hover:opacity-90 transition-opacity duration-200"
+                          hover:bg-[#d5ad51] hover:text-black hover:opacity-90 transition-opacity duration-200"
               >
                 Apply Now
-              </a>
+              </Link>
 
               {/* Hamburger — mobile only */}
               <button
@@ -117,11 +114,10 @@ export default function Navbar() {
       {/* Mobile Full-Screen Menu */}
       <div
         className={`fixed inset-0 z-40 md:hidden bg-white flex flex-col items-center justify-center
-                    transition-all duration-300 ${
-                      menuOpen
-                        ? "opacity-100 pointer-events-auto"
-                        : "opacity-0 pointer-events-none"
-                    }`}
+                    transition-all duration-300 ${menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+          }`}
         aria-hidden={!menuOpen}
       >
         <nav
@@ -135,24 +131,23 @@ export default function Navbar() {
                 key={label}
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className={`text-lg font-medium transition-colors duration-200 ${
-                  isActive
+                className={`text-lg font-medium transition-colors duration-200 ${isActive
                     ? "text-[#d5ad51]"
                     : "text-[#041d3d] hover:text-[#d5ad51]"
-                }`}
+                  }`}
               >
                 {label}
               </Link>
             );
           })}
-          <a
+          <Link
             href="#apply"
             onClick={() => setMenuOpen(false)}
             className="mt-4 text-sm font-medium text-white bg-[#041d3d] px-6 py-2.5
-                       hover:opacity-90 transition-opacity duration-200"
+             hover:bg-[#d5ad51] hover:text-black transition-all duration-300"
           >
             Apply Now
-          </a>
+          </Link>
         </nav>
       </div>
 
