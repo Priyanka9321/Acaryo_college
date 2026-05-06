@@ -26,7 +26,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="overflow-hidden border-t border-[#e6ddd2] bg-[#fbf8f4] text-[#2f231f]">
+    <footer className="overflow-hidden border-t border-[#e6ddd2] bg-[#fff] text-[#2f231f]">
       <div className="border-b border-[#ede3d8] bg-[#f6f4f2]">
         <div className="mx-auto flex max-w-7xl items-center justify-end gap-4 px-4 py-4 md:px-6">
           {socialLinks.map(({ label, href, icon: Icon }) => (
